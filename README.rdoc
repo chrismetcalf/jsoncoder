@@ -5,3 +5,38 @@ Description goes here.
 == Copyright
 
 Copyright (c) 2009 Chris Metcalf. See LICENSE for details.
+
+Synopsis
+--------
+jsoncoder: Geocodes addresses contained in JSON input
+
+
+Usage
+-----
+jsoncoder [OPTIONS]
+
+-h, --help:
+
+   Show help
+
+--fields [field1,field2]
+
+   The comma-separated list of fields from the JSON that should be concatenated to form a searchable address. Ex:
+      --fields addr1,addr2,city,state,zip
+
+--geocoder [name]:
+
+   The geocoder to use to geocode the address. For allowed geocoders, see http://graticule.rubyforge.org/
+
+--api-key [key]:
+
+   Used to specify the API key to use for the geocoder, and overrides the lookup of the key from the key file
+
+--sleep [seconds]:
+
+   Tells the script to delay [seconds] seconds between service invocations, to throttle your requests
+
+--key-file [filename]:
+
+   The location of a config file containing "geocoder: key" pairs, one on each line. By default, the script looks in "~/.jsoncoder"
+
